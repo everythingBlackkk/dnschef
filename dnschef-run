@@ -1,0 +1,11 @@
+#!/bin/sh
+DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PYTHON="${PYTHON:-$DIR/.venv/bin/python}"
+
+if [ ! -x "$PYTHON" ]; then
+  echo "Python venv not found: $PYTHON" >&2
+  echo "Run: python3 -m venv .venv && ./.venv/bin/pip install -r requirements.txt" >&2
+  exit 1
+fi
+
+exec "$PYTHON" "$DIR/dnschef.py" "$@"
