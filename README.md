@@ -10,7 +10,6 @@ The examples use placeholder domains:
 
 ```text
 api.example.test
-example-alb-123456.eu-central-1.elb.amazonaws.com
 ```
 
 Replace them with the in-scope API hostname and its CNAME/load balancer hostname.
